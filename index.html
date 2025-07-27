@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-gray-100">
+    <div class="max-w-4xl mx-auto p-6 bg-white mt-10 rounded-lg shadow-lg">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold flex items-center gap-2">
+                🎓 <span>Student List Manager</span>
+            </h1>
+        </div>
+        <!-- Add Student Form -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
+            <input id="studentName" type="text" placeholder="Student Name"
+                class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <input id="studentGrade" type="text" placeholder="Grade (A, B, C...)"
+                class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <button onclick="addStudent()"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">+
+                Add</button>
+        </div>
+
+        <!-- Filter and Reset -->
+        <div class="flex flex-col sm:flex-row items-center gap-3 mb-8">
+            <input id="filterInput" type="text" placeholder="Search by name or grade..."
+                class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+            <button onclick="filterStudents()"
+                class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition">🔍 Filter</button>
+            <button onclick="resetFilter()"
+                class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg text-gray-700 transition">Reset</button>
+        </div>
+
+        <!-- Student List -->
+        <div id="studentList" class="grid grid-cols-1 sm:grid-cols-2 gap-4 min-h-[50px]">
+            <!-- Student cards will be injected here -->
+        </div>
+
+        <p id="totalCount" class="text-sm text-gray-600 mt-4">Total Students: 0</p>
+    </div>
+
+    <script src="./script/main.js"></script>
+</body>
+</html>
